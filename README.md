@@ -14,6 +14,11 @@ To create a Alpaca Connect app, follow these steps:
 
 Once your app has been created, you will receive your client_id and client_secret. You will need these values to authenticate your app with Alpaca.
 
+## Demo
+
+Here's a demo of the Alpaca Connect app - https://alpacahq-connect-sample.vercel.app/
+
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
