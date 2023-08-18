@@ -9,6 +9,6 @@ exports.authorize = async (req, res, next) => {
       process.env.ALPACA_CONNECT_REDIRECT_URL +
       "&state=" +
       uuidv4() +
-      "&scope=account:write,trading"
+      "&scope=account:write%20trading"
   );
 };
