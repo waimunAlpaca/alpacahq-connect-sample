@@ -24,25 +24,23 @@ exports.callback = async (req, res, next) => {
   console.log("callback code " + code);
   console.log("callback state " + state);
 
-  res.json({
-    message: "Received code + state. Verify state and store code in DB",
-  });
-};
-
-// Note: this request should take place behind-the-scenes from your backend server and shouldn’t be visible to the end users for security purposes.
-exports.token = async (req, res, next) => {
-  console.log(
+  let url =
     "curl -X POST " +
-      process.env.ALPACA_CONNECT_TOKEN_URL +
-      " -d 'grant_type=authorization_code&code=" +
-      req.body.code +
-      "&client_id=" +
-      process.env.ALPACA_CONNECT_CLIENT_ID +
-      "&client_secret=" +
-      process.env.ALPACA_CONNECT_CLIENT_SECRET +
-      "&redirect_uri=" +
-      process.env.ALPACA_CONNECT_REDIRECT_URL +
-      "'"
-  );
-  res.json([]);
+    process.env.ALPACA_CONNECT_TOKEN_URL +
+    " -d 'grant_type=authorization_code&code=" +
+    code +
+    "&client_id=" +
+    process.env.ALPACA_CONNECT_CLIENT_ID +
+    "&client_secret=" +
+    process.env.ALPACA_CONNECT_CLIENT_SECRET +
+    "&redirect_uri=" +
+    process.env.ALPACA_CONNECT_REDIRECT_URL +
+    "'";
+
+  res.render("oauth", {
+    title: "Connect API",
+    code,
+    state,
+    url,
+  });
 };

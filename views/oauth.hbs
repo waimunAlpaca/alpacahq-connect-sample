@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<p>2. Received code: {{code }} + state: {{code}} from the redirect_uri callback.</p>
+<p>3. Next, make a {{url}}</p>
+<p>4. You will receive a valid access_token like {
+    "access_token": "xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx",
+    "token_type": "bearer",
+    "scope": "account:write trading"
+}.</p>
+<p>5. Store the access_token. Use the access_token as Authorization: Bearer to access Alpaca Trading API on behalf of the client.</p>
+<p>5. PAPER: curl https://paper-api.alpaca.markets/v2/account -H 'Authorization: Bearer xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx'</p>
+<p>6. LIVE: curl https://api.alpaca.markets/v2/account -H 'Authorization: Bearer xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxx'</p>
